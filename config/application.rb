@@ -18,5 +18,7 @@ module FilterPipes
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.enable_dependency_loading = true
+    config.eager_load_paths << Rails.root.join('lib/filters')
   end
 end

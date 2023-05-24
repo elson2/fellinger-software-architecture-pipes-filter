@@ -1,0 +1,4 @@
+<%= form_tag({ action: 'perform_filter', method: 'post' }, multipart: true, data: { turbo: false }) do %>
+  <%= file_field_tag 'image_file' %>
+  <%= submit_tag 'Upload' %>
+<% end %>
