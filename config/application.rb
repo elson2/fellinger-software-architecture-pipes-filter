@@ -20,5 +20,6 @@ module FilterPipes
     # config.eager_load_paths << Rails.root.join("extras")
     config.enable_dependency_loading = true
     config.eager_load_paths << Rails.root.join('lib/filters')
+    config.eager_load_paths << Rails.root.join('lib/pipeline')
   end
 end
