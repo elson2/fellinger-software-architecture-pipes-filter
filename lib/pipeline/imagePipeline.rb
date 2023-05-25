@@ -7,7 +7,6 @@ class ImagePipeline
 
   def execute(img)
     @filters.each do |filter|
-      puts img.class
       img = filter.execute img
     end
     return img

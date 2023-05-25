@@ -1,4 +1,15 @@
+<h1>This is a exercise for the pipes and filters design pattern</h1>
 <%= form_tag({ action: 'perform_filter', method: 'post' }, multipart: true, data: { turbo: false }) do %>
-  <%= file_field_tag 'image_file' %>
-  <%= submit_tag 'Upload' %>
+    <%= label_tag 'image_file', '* Choose an image file:' %>
+    <br>
+    <%= file_field_tag 'image_file', required: true %>
+    <br>
+    <div>
+        <p>Select filters for the image:</p>
+        <% @all_filters.each_with_index do |filter, index| %>
+            <%= select_tag "selected_filters[#{index}]",  options_for_select(all_filter_options(@all_filters)), prompt: "Select Filter" %>
+        <% end %>
+    </div>
+    <br>
+    <%= submit_tag 'Upload' %>
 <% end %>

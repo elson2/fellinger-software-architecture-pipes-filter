@@ -1,11 +1,8 @@
-
 class ThresholdFilter
-  FILTER = "threshold"
+  include IFilter
+  NAME = "threshold"
 
   def execute(img)
-    require 'rmagick'
-
     result = img.adaptive_threshold
-    return result
   end
 end
